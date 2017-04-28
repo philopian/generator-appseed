@@ -1,0 +1,17 @@
+{
+  "name": "generator-appseed",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Phil Willis <pdotwdot@gmail.com> (http://www.philwillis.pw/)",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "jsonfile": "^2.2.3",
+    "lodash": "^4.6.1",
+    "shelljs": "^0.7.0",
+    "yeoman-generator": "^0.22.5",
+    "require-dir": "^0.3.0"
+  }
+}
