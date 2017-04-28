@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {},
+  "keywords": [
+    "yeoman-generator"
+  ],
   "author": "Phil Willis <pdotwdot@gmail.com> (http://www.philwillis.pw/)",
   "license": "ISC",
   "dependencies": {
