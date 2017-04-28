@@ -1,6 +1,6 @@
 {
   "name": "generator-appseed",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This is a Yeoman generator to scaffold a web application with WebPack, ES6, Nodejs",
   "files": [
     "generators"
