@@ -1,11 +1,10 @@
-# install yo
+# Install
 ~~~
-$ npm install --global yo
+$ npm install --global yo generator-appseed
 ~~~
 
 
-# install appseed
+# Use the scafolding tool
 ~~~
-$ cd generator-appseed
-$ npm link
+$ yo appseed
 ~~~

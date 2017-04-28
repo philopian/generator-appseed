@@ -2,7 +2,6 @@
 var _ = require('lodash');
 var fs = require('fs');
 var chalk = require('chalk');
-var yosay = require('yosay');
 var generators = require('yeoman-generator');
 var greeting = require('../ascii-art-greeting');
 
@@ -11,50 +10,55 @@ module.exports = generators.Base.extend({
     generators.Base.apply(this, arguments);
   },
 
-  // INITLALIZING
-  initlalizing: function() {
-    // console.log("...initlalizing");
-  },
+  initlalizing: function() {},
 
-
-  // PROMPT USER WITH SOME QUESTIONS
   prompting: function() {
-
+    console.log(greeting.logo);
+    var done = this.async();
+    this.prompt([{
+        type: 'input',
+        name: 'appName',
+        message: 'Give your app a name!',
+        store: true
+      }, ],
+      function(answers) {
+        this.answers = answers;
+        done();
+      }.bind(this));
   },
 
-
-  // CONFIGURE
   configuring: function() {
-    // console.log("...configuring");
+    console.log("...configuring");
+    console.log(this.answers);
   },
 
-
-  // DEFAULTS
   default: function() {
-    // console.log("...default");
+    console.log("...default");
   },
 
-
-  // CREATE/WRITE/COPY TEMPLATE FILES
   writing: {
-
+    copyDirectory() {
+      this.directory('appseed1.0.2/', './');
+    },
+    templateFiles: function() {
+      this.fs.copyTpl(
+        this.templatePath('appseed1.0.2_templates/index.html'),
+        this.destinationPath('www/index.html'), {
+          AppName: this.answers.appName
+        }
+      );
+    }
   },
 
-  // WHAT TO DO WITH CONFLICTS
-  conflicts: function() {
-    // console.log("...conflicts");
-  },
+  conflicts: function() {},
 
-
-  // INSTALL BOWER/NPM PACKAGES
   install: function() {
-    // console.log("...install");
+    var shelljs = require('shelljs');
+    var cmd = "bower i && yarn";
+    shelljs.exec(cmd)
   },
 
-
-  // TELL USER EVERYTHING IS COMPLETED
   end: function() {
-
+    console.log('...DONE');
   }
-
 });
