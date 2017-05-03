@@ -38,11 +38,11 @@ module.exports = generators.Base.extend({
 
   writing: {
     copyDirectory() {
-      this.directory('appseed1.0.2/', './');
+      this.directory('appseed/', './');
     },
     templateFiles: function() {
       this.fs.copyTpl(
-        this.templatePath('appseed1.0.2_templates/index.html'),
+        this.templatePath('appseed_templates/index.html'),
         this.destinationPath('www/index.html'), {
           AppName: this.answers.appName
         }
